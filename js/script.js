@@ -326,62 +326,42 @@ function result() {
     document.getElementById("resulttext").style.display = 'block';
     document.getElementById('resliquid').innerHTML = res_liquid;
     // viscocity();
-    if (optionball == 'copperball' && optionliq == 'glycerine') {
-        v = 4.5 ;
-        ball_density = 8600;
-        liq_density = 1260;
-    } else if (optionball == 'copperball' && optionliq == 'water') {
-        v = 6.5;
-        ball_density = 8600;
-        liq_density = 997;
-    } else if (optionball == 'copperball' && optionliq == 'honey') {
-        v = 2.5;
-        ball_density = 8600;
-        liq_density = 1420;
-    } else if (optionball == 'glassball' && optionliq == 'glycerine') {
-        v = 3;
-        ball_density = 2600;
-        liq_density = 1260;
-    } else if (optionball == 'glassball' && optionliq == 'water') {
-        v = 5.5;
-        ball_density = 2600;
-        liq_density = 997;
-    } else if (optionball == 'glassball' && optionliq == 'honey') {
-        v = 1.5;
-        ball_density = 2600;
-        liq_density = 1420;
-    }
-    // size = Slider.value;
-    r = ((size - 10) / 2)/1000;
-    meu = (2 / 9) * (((r * r * 9.8) * (ball_density - liq_density)) / v);
-    meu = meu.toFixed(2);
-    document.getElementById('viscocity').innerHTML = meu + ' Nm^-2s';
-}
-
-function viscocity() {
-    // if (optionball == 'copper' && optionliq == 'glycerine') {
-    //     v = 4.5 * (Math.pow(10, -2));
+    // if (optionball == 'copperball' && optionliq == 'glycerine') {
+    //     v = 4.5 ;
     //     ball_density = 8600;
     //     liq_density = 1260;
-    // } else if (optionball == 'copper' && optionliq == 'water') {
-    //     v = 6.5 * (Math.pow(10, -2));
+    // } else if (optionball == 'copperball' && optionliq == 'water') {
+    //     v = 6.5;
     //     ball_density = 8600;
     //     liq_density = 997;
-    // } else if (optionball == 'copper' && optionliq == 'honey') {
-    //     v = 2.5 * (Math.pow(10, -2));
+    // } else if (optionball == 'copperball' && optionliq == 'honey') {
+    //     v = 2.5;
     //     ball_density = 8600;
     //     liq_density = 1420;
-    // } else if (optionball == 'glass' && optionliq == 'glycerine') {
-    //     v = 3 * (Math.pow(10, -2));
+    // } else if (optionball == 'glassball' && optionliq == 'glycerine') {
+    //     v = 3;
     //     ball_density = 2600;
     //     liq_density = 1260;
-    // } else if (optionball == 'glass' && optionliq == 'water') {
-    //     v = 5.5 * (Math.pow(10, -2));
+    // } else if (optionball == 'glassball' && optionliq == 'water') {
+    //     v = 5.5;
     //     ball_density = 2600;
     //     liq_density = 997;
-    // } else if (optionball == 'glass' && optionliq == 'honey') {
-    //     v = 1.5 * (Math.pow(10, -2));
+    // } else if (optionball == 'glassball' && optionliq == 'honey') {
+    //     v = 1.5;
     //     ball_density = 2600;
     //     liq_density = 1420;
     // }
+    // // size = Slider.value;
+    // r = ((size - 10) / 2)/1000;
+    // meu = (2 / 9) * (((r * r * 9.8) * (ball_density - liq_density)) / v);
+    // meu = meu.toFixed(2);
+
+    if (optionliq == 'glycerine') {
+        meu = 0.95;
+    } else if (optionliq == 'water') {
+        meu = 0.00089;
+    } else if (optionliq == 'honey') {
+        meu = 10;
+    }
+    document.getElementById('viscocity').innerHTML = meu + ' Nm^ -2s';
 }
